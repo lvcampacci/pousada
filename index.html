@@ -1,0 +1,1110 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pousada Coconut | Seu refúgio perto do mar</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #faf8f2;
+  --sand: #eee9dc;
+  --green: #718b79;
+  --dark: #183b38;
+  --text: #40514b;
+  --muted: #89918a;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* MENU */
+
+.header {
+  position: absolute;
+  top: 22px;
+  left: 5%;
+  width: 90%;
+  z-index: 20;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 60px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(14px);
+  color: white;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  letter-spacing: 3px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.logo small {
+  display: block;
+  font-family: 'Manrope', sans-serif;
+  font-size: 8px;
+  letter-spacing: 5px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav a:not(.nav-cta) {
+  opacity: .9;
+  transition: .3s;
+}
+
+.nav a:hover {
+  opacity: .65;
+}
+
+.nav-cta {
+  background: white;
+  color: var(--dark);
+  padding: 13px 22px;
+  border-radius: 40px;
+  font-weight: 700;
+}
+
+/* ABERTURA */
+
+.hero {
+  min-height: 760px;
+  height: 100vh;
+  max-height: 1000px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(8,30,30,.70) 0%, rgba(8,30,30,.30) 55%, rgba(8,30,30,.08) 100%),
+    linear-gradient(0deg, rgba(8,30,30,.30), transparent 45%),
+    url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2200&q=90')
+    center 55% / cover no-repeat;
+}
+
+.hero-content {
+  width: 90%;
+  max-width: 1250px;
+  margin: 70px auto 0;
+  position: relative;
+  z-index: 2;
+  animation: appear 1s ease both;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255,255,255,.4);
+  border-radius: 50px;
+  background: rgba(255,255,255,.10);
+  backdrop-filter: blur(8px);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+}
+
+.hero-tag span {
+  width: 6px;
+  height: 6px;
+  background: #c9d9bd;
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(65px, 8.5vw, 112px);
+  line-height: .91;
+  font-weight: 400;
+  letter-spacing: -2px;
+  max-width: 750px;
+  margin-bottom: 25px;
+}
+
+.hero h1 em {
+  font-weight: 400;
+  color: #d8e2d1;
+}
+
+.hero-description {
+  font-size: 14px;
+  line-height: 1.9;
+  max-width: 430px;
+  color: rgba(255,255,255,.88);
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 17px 25px;
+  background: #f5f2e9;
+  color: var(--dark);
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.primary-button:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.text-link {
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255,255,255,.65);
+  padding-bottom: 5px;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 35px;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 3;
+  color: rgba(255,255,255,.85);
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.scroll-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.scroll-line {
+  width: 42px;
+  height: 1px;
+  background: white;
+}
+
+/* INTRODUÇÃO */
+
+.intro {
+  padding: 120px 8%;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.section-tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(44px, 5vw, 65px);
+  line-height: 1.02;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+.intro-text p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2.1;
+  margin-top: 22px;
+  max-width: 490px;
+}
+
+.intro-visual {
+  position: relative;
+  min-height: 470px;
+}
+
+.intro-photo {
+  position: absolute;
+  inset: 0 50px 35px 0;
+  border-radius: 190px 190px 12px 12px;
+  background:
+    url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=85')
+    center / cover;
+}
+
+.photo-note {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: white;
+  padding: 23px 28px;
+  border-radius: 8px;
+  box-shadow: 0 15px 45px rgba(0,0,0,.09);
+  max-width: 210px;
+}
+
+.photo-note strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--dark);
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.photo-note span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* FRASE DE DESTAQUE */
+
+.quote {
+  padding: 90px 8%;
+  text-align: center;
+  background: var(--dark);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote::before,
+.quote::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+}
+
+.quote::before {
+  top: -170px;
+  left: -100px;
+}
+
+.quote::after {
+  bottom: -180px;
+  right: -80px;
+}
+
+.quote p {
+  max-width: 850px;
+  margin: auto;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.15;
+  position: relative;
+  z-index: 1;
+}
+
+.quote span {
+  display: block;
+  margin-top: 25px;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #bdcbbd;
+}
+
+/* ACOMODAÇÕES */
+
+.stays {
+  padding: 115px 8%;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 55px;
+}
+
+.section-heading p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 2;
+  margin-top: 20px;
+}
+
+.stay-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 23px;
+}
+
+.stay-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 12px 35px rgba(28,57,48,.06);
+  transition: .4s;
+}
+
+.stay-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(28,57,48,.12);
+}
+
+.stay-image {
+  height: 300px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.stay-image.one {
+  background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85');
+}
+
+.stay-image.two {
+  background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=85');
+}
+
+.stay-image.three {
+  background-image: url('https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=1000&q=85');
+}
+
+.stay-number {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(255,255,255,.9);
+  border-radius: 50px;
+  padding: 8px 13px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--dark);
+}
+
+.stay-info {
+  padding: 27px;
+}
+
+.stay-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.stay-info p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* EXPERIÊNCIAS */
+
+.experiences {
+  padding: 105px 8%;
+  background: var(--sand);
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.experience-item {
+  padding: 38px 30px;
+  border: 1px solid rgba(65,88,73,.17);
+  border-radius: 12px;
+  transition: .3s;
+}
+
+.experience-item:hover {
+  background: rgba(255,255,255,.55);
+  transform: translateY(-5px);
+}
+
+.experience-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(113,139,121,.16);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  margin-bottom: 25px;
+}
+
+.experience-item h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 31px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+
+.experience-item p {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* GALERIA */
+
+.gallery-section {
+  padding: 110px 8%;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 13px;
+}
+
+.gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: .5s;
+}
+
+.gallery-item:hover {
+  filter: brightness(.85);
+}
+
+.gallery-item.large {
+  grid-row: span 2;
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85');
+}
+
+.gallery-item.g2 {
+  background-image: url('https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=1000&q=85');
+}
+
+.gallery-item.g3 {
+  background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1000&q=85');
+}
+
+.gallery-item.g4 {
+  background-image: url('https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1000&q=85');
+}
+
+.gallery-item.g5 {
+  background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85');
+}
+
+/* LOCALIZAÇÃO */
+
+.location {
+  padding: 100px 8%;
+  background: #f0eee5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.location p {
+  font-size: 13px;
+  line-height: 2;
+  color: var(--muted);
+  margin: 22px 0 30px;
+  max-width: 460px;
+}
+
+.location-photo {
+  min-height: 410px;
+  border-radius: 12px;
+  background:
+    url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85')
+    center / cover;
+}
+
+.dark-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 24px;
+  border-radius: 50px;
+  background: var(--dark);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+
+.dark-button:hover {
+  background: var(--green);
+  transform: translateY(-3px);
+}
+
+/* RESERVAS */
+
+.booking {
+  padding: 110px 8%;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(rgba(12,39,38,.72), rgba(12,39,38,.82)),
+    url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1800&q=85')
+    center / cover;
+}
+
+.booking h2 {
+  color: white;
+  max-width: 750px;
+  margin: 0 auto 20px;
+}
+
+.booking p {
+  font-size: 13px;
+  line-height: 2;
+  color: rgba(255,255,255,.8);
+  max-width: 530px;
+  margin: 0 auto 32px;
+}
+
+.booking .section-tag {
+  color: #d3dfd0;
+}
+
+.booking .primary-button {
+  background: #f4f0e6;
+}
+
+/* RODAPÉ */
+
+footer {
+  background: #102e2d;
+  color: white;
+  padding: 55px 8% 30px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-bottom: 35px;
+}
+
+.footer-description {
+  font-size: 11px;
+  color: rgba(255,255,255,.65);
+  line-height: 1.8;
+  margin-top: 12px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.8);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.13);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  color: rgba(255,255,255,.48);
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+/* WHATSAPP */
+
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 30;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #267c5b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.2);
+  transition: .3s;
+}
+
+.whatsapp:hover {
+  transform: scale(1.08);
+}
+
+/* ANIMAÇÕES */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+  .header {
+    padding: 13px 18px;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+
+  .nav a:not(.nav-cta) {
+    display: none;
+  }
+
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .intro-visual {
+    min-height: 420px;
+  }
+
+  .stay-grid,
+  .experience-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .location {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    top: 12px;
+    left: 4%;
+    width: 92%;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .nav-cta {
+    padding: 11px 15px;
+    font-size: 9px;
+  }
+
+  .hero {
+    min-height: 740px;
+    height: 92vh;
+    background-position: 58% center;
+  }
+
+  .hero-content {
+    margin-top: 60px;
+  }
+
+  .hero h1 {
+    font-size: clamp(60px, 16vw, 82px);
+  }
+
+  .hero-description {
+    font-size: 12px;
+    max-width: 320px;
+  }
+
+  .hero-bottom {
+    bottom: 25px;
+    font-size: 8px;
+  }
+
+  .hero-bottom > span:last-child {
+    display: none;
+  }
+
+  .intro,
+  .stays,
+  .experiences,
+  .gallery-section,
+  .location {
+    padding: 75px 7%;
+  }
+
+  .intro-visual {
+    min-height: 350px;
+  }
+
+  .intro-photo {
+    right: 25px;
+  }
+
+  .photo-note {
+    padding: 17px;
+  }
+
+  .stay-grid,
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stay-image {
+    height: 280px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 210px 160px 160px;
+  }
+
+  .gallery-item.large {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .location-photo {
+    min-height: 300px;
+  }
+
+  .booking {
+    padding: 85px 7%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="#" class="logo">
+    COCONUT
+    <small>POUSADA</small>
+  </a>
+
+  <nav class="nav">
+    <a href="#sobre">A pousada</a>
+    <a href="#acomodacoes">Acomodações</a>
+    <a href="#experiencias">Experiências</a>
+    <a href="#localizacao">Localização</a>
+    <a href="#reservas" class="nav-cta">Reservar agora ↗</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span></span>
+      Um convite para desacelerar
+    </div>
+
+    <h1>Seu refúgio<br><em>perto do mar.</em></h1>
+
+    <p class="hero-description">
+      Dias leves, boas companhias e o prazer de aproveitar
+      cada momento longe da correria.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#reservas" class="primary-button">
+        Quero conhecer a pousada <span>↗</span>
+      </a>
+
+      <a href="#sobre" class="text-link">Descubra a Coconut</a>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="scroll-label">
+      <span class="scroll-line"></span>
+      Explore a pousada
+    </div>
+    <span>POUSADA COCONUT · CEARÁ</span>
+  </div>
+</section>
+
+<section class="intro" id="sobre">
+  <div class="intro-text">
+    <div class="section-tag">MAIS QUE UMA ESTADIA</div>
+    <h2>Um lugar para estar perto de quem importa.</h2>
+
+    <p>
+      Às vezes, tudo o que a gente precisa é de alguns dias longe
+      da rotina. Uma viagem a dois, férias com a família ou simplesmente
+      uma pausa para respirar e aproveitar o presente.
+    </p>
+
+    <p>
+      Na Pousada Coconut, a ideia é essa: transformar sua estadia
+      em momentos gostosos de lembrar.
+    </p>
+  </div>
+
+  <div class="intro-visual">
+    <div class="intro-photo"></div>
+    <div class="photo-note">
+      <strong>Viva sem pressa.</strong>
+      <span>SEU TEMPO, SEU MOMENTO</span>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <p>“A vida fica melhor quando a gente encontra tempo para aproveitar.”</p>
+  <span>POUSADA COCONUT</span>
+</section>
+
+<section class="stays" id="acomodacoes">
+  <div class="section-heading">
+    <div class="section-tag">SEU CANTINHO DE DESCANSO</div>
+    <h2>Conforto para aproveitar cada dia.</h2>
+    <p>
+      Um espaço para descansar, recarregar as energias e curtir
+      a viagem do seu jeito.
+    </p>
+  </div>
+
+  <div class="stay-grid">
+    <article class="stay-card">
+      <div class="stay-image one">
+        <span class="stay-number">01 / A DOIS</span>
+      </div>
+      <div class="stay-info">
+        <h3>Uma viagem especial</h3>
+        <p>
+          Para aproveitar a companhia, celebrar momentos
+          e viver dias diferentes da rotina.
+        </p>
+      </div>
+    </article>
+
+    <article class="stay-card">
+      <div class="stay-image two">
+        <span class="stay-number">02 / EM FAMÍLIA</span>
+      </div>
+      <div class="stay-info">
+        <h3>Férias para recordar</h3>
+        <p>
+          Mais tempo juntos, boas conversas e histórias
+          para levar para casa.
+        </p>
+      </div>
+    </article>
+
+    <article class="stay-card">
+      <div class="stay-image three">
+        <span class="stay-number">03 / DESCANSO</span>
+      </div>
+      <div class="stay-info">
+        <h3>Uma pausa merecida</h3>
+        <p>
+          Deixe os compromissos de lado e aproveite
+          o prazer de ter um tempo só seu.
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="experiences" id="experiencias">
+  <div class="section-heading">
+    <div class="section-tag">DO SEU JEITO, NO SEU TEMPO</div>
+    <h2>O melhor da viagem está nos momentos.</h2>
+    <p>
+      Não precisa de muito para aproveitar. Às vezes,
+      o melhor plano é não ter pressa.
+    </p>
+  </div>
+
+  <div class="experience-grid">
+    <div class="experience-item">
+      <div class="experience-icon">♡</div>
+      <h3>Momentos a dois</h3>
+      <p>
+        Uma viagem para curtir a companhia, conversar
+        e criar lembranças especiais.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-icon">☼</div>
+      <h3>Tempo em família</h3>
+      <p>
+        Férias com quem você ama, com espaço para
+        aproveitar cada instante juntos.
+      </p>
+    </div>
+
+    <div class="experience-item">
+      <div class="experience-icon">≈</div>
+      <h3>Paz e tranquilidade</h3>
+      <p>
+        Dias mais leves, brisa do mar e aquela sensação
+        boa de não precisar correr.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="section-heading">
+    <div class="section-tag">UM GOSTINHO DO QUE ESPERA POR VOCÊ</div>
+    <h2>Imagine seus próximos dias por aqui.</h2>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item large"></div>
+    <div class="gallery-item g2"></div>
+    <div class="gallery-item g3"></div>
+    <div class="gallery-item g4"></div>
+    <div class="gallery-item g5"></div>
+  </div>
+</section>
+
+<section class="location" id="localizacao">
+  <div>
+    <div class="section-tag">SEU DESTINO, SEU MOMENTO</div>
+    <h2>O mar por perto. A tranquilidade no caminho.</h2>
+
+    <p>
+      Uma oportunidade para sair da rotina, conhecer novos lugares
+      e aproveitar dias especiais pertinho do litoral.
+    </p>
+
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=Cumbuco+Ceara"
+      target="_blank"
+      class="dark-button"
+    >
+      Como chegar <span>↗</span>
+    </a>
+  </div>
+
+  <div class="location-photo"></div>
+</section>
+
+<section class="booking" id="reservas">
+  <div class="section-tag">ESTÁ NA HORA DE PLANEJAR SUA VIAGEM</div>
+
+  <h2>Seus próximos dias<br>merecem ser assim.</h2>
+
+  <p>
+    Escolha suas datas, chame quem você gosta e venha
+    viver momentos especiais na Pousada Coconut.
+  </p>
+
+  <a href="https://wa.me/5585999999999" target="_blank" class="primary-button">
+    Consulte sua reserva <span>↗</span>
+  </a>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <a href="#" class="logo">
+        COCONUT
+        <small>POUSADA</small>
+      </a>
+
+      <p class="footer-description">
+        Um lugar para descansar, aproveitar<br>
+        e criar boas lembranças.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#sobre">A pousada</a>
+      <a href="#acomodacoes">Acomodações</a>
+      <a href="#experiencias">Experiências</a>
+      <a href="#reservas">Reservas</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 POUSADA COCONUT. TODOS OS DIREITOS RESERVADOS.</span>
+    <span>FEITO PARA APROVEITAR A VIDA.</span>
+  </div>
+</footer>
+
+<a href="https://wa.me/5585999999999" target="_blank" class="whatsapp" aria-label="WhatsApp">
+  ☎
+</a>
+
+</body>
+</html>
